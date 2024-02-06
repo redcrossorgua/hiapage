@@ -15,6 +15,9 @@ env:
   # When using "Q&A"s, you can enable search: (set to 'true' / 'false')
   NG_USE_Q_AND_A_SEARCH: 'true'
   #
+  # Use the language-switcher to switch between Regions (set to 'true' / 'false')
+  NG_USE_REGION_PER_LOCALE: 'false'
+  #
   # For demo-purpose only: A highly visible label to show instance name/version
   ENV_NAME: ''
   #
