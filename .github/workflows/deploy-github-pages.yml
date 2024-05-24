@@ -37,9 +37,13 @@ env:
     \n
     \n
   #
-  # An (optional) notice on the bottom of the screen, can be overwritten by the sheet.
-  # Will override the (optional) bottom-right "Contact"-buttons from the sheet.
+  # An (optional) notice on the top of the screen, can be overwritten on sub-pages per-region by each region's sheet.
   TXT_MAIN_PAGE_NOTICE: ''
+  #
+  # An (optional) footer at the bottom of the screen, can be overwritten on sub-pages per-region by each region's sheet.
+  TXT_MAIN_FOOTER: >-
+    **Helpful Information**
+    \n\n
   #
   # Contents of the 'error-page'
   #
