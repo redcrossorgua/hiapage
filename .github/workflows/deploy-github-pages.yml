@@ -18,6 +18,9 @@ env:
   # Use the language-switcher to switch between Regions (set to 'true' / 'false')
   NG_USE_REGION_PER_LOCALE: 'false'
   #
+  # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
+  NG_USE_FEEDBACK_PROMPT: 'false'
+  #
   # For demo-purpose only: A highly visible label to show instance name/version
   ENV_NAME: ''
   #
@@ -40,10 +43,20 @@ env:
   # An (optional) notice on the top of the screen, can be overwritten on sub-pages per-region by each region's sheet.
   TXT_MAIN_PAGE_NOTICE: ''
   #
+  # An (optional) "About"-page
+  # Can be multiple-lines of Markdown syntax or contain some HTML. Newlines need to be specified with `\n` or `<br />`.
+  TXT_PAGE_ABOUT: >-
+    \n
+  #
+  # An (optional) "Privacy"-page
+  # Can be multiple-lines of Markdown syntax or contain some HTML. Newlines need to be specified with `\n` or `<br />`.
+  TXT_PAGE_PRIVACY: >-
+    \n
+  #
   # An (optional) footer at the bottom of the screen, can be overwritten on sub-pages per-region by each region's sheet.
   TXT_MAIN_FOOTER: >-
-    **Helpful Information**
-    \n\n
+    **Helpful Information**  \n
+    \n
   #
   # Contents of the 'error-page'
   #
