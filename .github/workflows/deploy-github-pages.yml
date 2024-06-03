@@ -15,6 +15,12 @@ env:
   # When using "Q&A"s, you can enable search: (set to 'true' / 'false')
   NG_USE_Q_AND_A_SEARCH: 'true'
   #
+  # Use the language-switcher to switch between Regions (set to 'true' / 'false')
+  NG_USE_REGION_PER_LOCALE: 'false'
+  #
+  # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
+  NG_USE_FEEDBACK_PROMPT: 'false'
+  #
   # For demo-purpose only: A highly visible label to show instance name/version
   ENV_NAME: ''
   #
@@ -34,9 +40,23 @@ env:
     \n
     \n
   #
-  # An (optional) notice on the bottom of the screen, can be overwritten by the sheet.
-  # Will override the (optional) bottom-right "Contact"-buttons from the sheet.
+  # An (optional) notice on the top of the screen, can be overwritten on sub-pages per-region by each region's sheet.
   TXT_MAIN_PAGE_NOTICE: ''
+  #
+  # An (optional) "About"-page
+  # Can be multiple-lines of Markdown syntax or contain some HTML. Newlines need to be specified with `\n` or `<br />`.
+  TXT_PAGE_ABOUT: >-
+    \n
+  #
+  # An (optional) "Privacy"-page
+  # Can be multiple-lines of Markdown syntax or contain some HTML. Newlines need to be specified with `\n` or `<br />`.
+  TXT_PAGE_PRIVACY: >-
+    \n
+  #
+  # An (optional) footer at the bottom of the screen, can be overwritten on sub-pages per-region by each region's sheet.
+  TXT_MAIN_FOOTER: >-
+    **Helpful Information**  \n
+    \n
   #
   # Contents of the 'error-page'
   #
@@ -85,6 +105,7 @@ on:
       - '*.md'
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -108,10 +129,10 @@ jobs:
         run: 'echo "Please change the ENV configuration to real-world values." && exit 1'
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
           cache-dependency-path: 'package.json'
@@ -131,6 +152,7 @@ jobs:
 
       - name: Build
         working-directory: 'helpful-information'
+        # NOTE: When the instance will be run on a custom (sub-)domain, remove the `--base-href`-flag+value.
         run: 'npm run build:production -- --output-path=../www --base-href=/${GITHUB_REPOSITORY#*/}/'
         env:
           # See all variables: https://github.com/rodekruis/helpful-information/blob/main/.env.example
@@ -143,15 +165,15 @@ jobs:
         run: 'cp www/index.html www/404.html'
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
         with:
           enablement: true
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: 'www'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
