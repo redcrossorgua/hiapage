@@ -16,7 +16,7 @@ env:
   NG_USE_Q_AND_A_SEARCH: 'true'
   #
   # Use the language-switcher to switch between Regions (set to 'true' / 'false')
-  NG_USE_REGION_PER_LOCALE: 'false'
+  NG_USE_REGION_PER_LOCALE: 'true'
   #
   # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
   NG_USE_FEEDBACK_PROMPT: 'false'
@@ -29,7 +29,7 @@ env:
   # ###########################################################################
   #
   # A (short) name, visible in the top (navigation-)bar and in the browser's tab/window-title (and search-engine results)
-  TXT_APP_NAME: ''
+  TXT_APP_NAME: 'HIA URCS'
   # An absolute/data-URL to an image, visible in the top (navigation-)bar
   TXT_APP_LOGO_URL: ''
   # The first heading, (only) visible on the main-page
@@ -81,13 +81,16 @@ env:
   #
   # The URL-part(s) to identify the region
   REGIONS: >-
-    info
+    ua,
+    en,
   # The readable label(s) on the link to the region-page
   REGIONS_LABELS: >-
-    Information
+    Ukrainian,
+    English,
   # The ID of the Google Sheet(s) that contains the content for the region
   REGIONS_SHEET_IDS: >-
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    14T-FTHkq14MdzRt2CW1cvmXeg7pkDvEOHg2IHrx-8o0,
+    1shxWY1jLUjpPCCXXdUbm59yp5fCh1qJpGcK5k-HStso,
 
 # #############################################################################
 #
