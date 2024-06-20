@@ -161,6 +161,9 @@ jobs:
           GOOGLE_SHEETS_API_URL: 'https://sheets.googleapis.com/v4/spreadsheets'
           AI_CONNECTION_STRING: ${{ secrets.AI_CONNECTION_STRING }}
 
+      - name: Add generic files
+        run: 'cp -r ./public/. www/'
+
       - name: Add 404.html
         run: 'cp www/index.html www/404.html'
 
