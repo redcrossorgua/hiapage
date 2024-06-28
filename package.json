@@ -4,6 +4,6 @@
     "node": ">=22"
   },
   "dependencies": {
-    "helpful-information": "https://github.com/rodekruis/helpful-information/tarball/v24.06.0"
+    "helpful-information": "https://github.com/rodekruis/helpful-information/tarball/v24.06.1"
   }
 }
