@@ -15,11 +15,22 @@ env:
   # When using "Q&A"s, you can enable search: (set to 'true' / 'false')
   NG_USE_Q_AND_A_SEARCH: 'true'
   #
+  # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
+  NG_USE_FEEDBACK_PROMPT: 'false'
+  #
   # Use the language-switcher to switch between Regions (set to 'true' / 'false')
   NG_USE_REGION_PER_LOCALE: 'false'
   #
-  # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
-  NG_USE_FEEDBACK_PROMPT: 'false'
+  # Default language
+  NG_LOCALE_LANGUAGE: 'en'
+  # Default language direction (Possible values: 'ltr' or 'rtl')
+  NG_LOCALE_DIR: 'ltr'
+  # Available language options (Comma-separated list like: '<language-code>:<language-name>,ar:العربية,en:English,*:Other...')
+  # To disable the language-switcher on the main-page, or when using `NG_USE_REGION_PER_LOCALE=true`, set this to: ''
+  NG_LOCALE_ALTERNATIVES: 'ar:العربية, en:English, es:Español, fr:Français, *:Other...'
+  # An (optional) explanation below the list of available language options (i.e "* Using Google Translate")
+  NG_LOCALE_ALTERNATIVES_EXPLANATION: '* Translations via Google Translate'
+  #
   #
   # For demo-purpose only: A highly visible label to show instance name/version
   ENV_NAME: ''
