@@ -2,7 +2,7 @@
 
 This repository contains deployment details of a [Helpful Information App](https://github.com/rodekruis/helpful-information)-instance.
 
-Public URL: <https://redcrossorgua.github.io/hiapage/>
+Public URL: <https://help.redcross.org.ua/>
 
 ---
 

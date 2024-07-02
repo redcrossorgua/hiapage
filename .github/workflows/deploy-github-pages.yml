@@ -15,11 +15,22 @@ env:
   # When using "Q&A"s, you can enable search: (set to 'true' / 'false')
   NG_USE_Q_AND_A_SEARCH: 'true'
   #
-  # Use the language-switcher to switch between Regions (set to 'true' / 'false')
-  NG_USE_REGION_PER_LOCALE: 'true'
-  #
   # Enable Feedback-prompt on Sub-Category and Offer pages (set to 'true' / 'false')
   NG_USE_FEEDBACK_PROMPT: 'false'
+  #
+  # Use the language-switcher to switch between Regions (set to 'true' / 'false')
+  NG_USE_REGION_PER_LOCALE: 'false'
+  #
+  # Default language
+  NG_LOCALE_LANGUAGE: 'en'
+  # Default language direction (Possible values: 'ltr' or 'rtl')
+  NG_LOCALE_DIR: 'ltr'
+  # Available language options (Comma-separated list like: '<language-code>:<language-name>,ar:العربية,en:English,*:Other...')
+  # To disable the language-switcher on the main-page, or when using `NG_USE_REGION_PER_LOCALE=true`, set this to: ''
+  NG_LOCALE_ALTERNATIVES: ''
+  # An (optional) explanation below the list of available language options (i.e "* Using Google Translate")
+  NG_LOCALE_ALTERNATIVES_EXPLANATION: ''
+  #
   #
   # For demo-purpose only: A highly visible label to show instance name/version
   ENV_NAME: ''
@@ -64,7 +75,7 @@ env:
   # This Sentence will be followd by a link to the "Contact-URL" set below
   TXT_ERROR_MESSAGE: 'Reach out to us at: '
   # Provide a URL that has contact-information on it, or a `mailto:contact@example.org`-URL
-  TXT_ERROR_CONTACT_URL: 'https://github.com/${{ github.repository }}'
+  TXT_ERROR_CONTACT_URL: 'https://redcross.org.ua/en/contacts/'
   # Call to action on a link that will reload the current page
   TXT_ERROR_RETRY: 'Try again?'
   #
@@ -85,7 +96,7 @@ env:
     en,
   # The readable label(s) on the link to the region-page
   REGIONS_LABELS: >-
-    Ukrainian,
+    Українська,
     English,
   # The ID of the Google Sheet(s) that contains the content for the region
   REGIONS_SHEET_IDS: >-
@@ -163,6 +174,9 @@ jobs:
           GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
           GOOGLE_SHEETS_API_URL: 'https://sheets.googleapis.com/v4/spreadsheets'
           AI_CONNECTION_STRING: ${{ secrets.AI_CONNECTION_STRING }}
+
+      - name: Add generic files
+        run: 'cp -r ./public/. www/'
 
       - name: Add 404.html
         run: 'cp www/index.html www/404.html'
