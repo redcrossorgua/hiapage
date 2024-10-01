@@ -40,7 +40,7 @@ env:
   # ###########################################################################
   #
   # A (short) name, visible in the top (navigation-)bar and in the browser's tab/window-title (and search-engine results)
-  TXT_APP_NAME: 'HIA URCS'
+  TXT_APP_NAME: 'Товариство Червоного Хреста України'
   # An absolute/data-URL to an image, visible in the top (navigation-)bar
   TXT_APP_LOGO_URL: ''
   # The first heading, (only) visible on the main-page
