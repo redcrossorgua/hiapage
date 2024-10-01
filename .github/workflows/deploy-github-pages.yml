@@ -22,7 +22,7 @@ env:
   NG_USE_REGION_PER_LOCALE: 'false'
   #
   # Default language
-  NG_LOCALE_LANGUAGE: 'en'
+  NG_LOCALE_LANGUAGE: 'ua'
   # Default language direction (Possible values: 'ltr' or 'rtl')
   NG_LOCALE_DIR: 'ltr'
   # Available language options (Comma-separated list like: '<language-code>:<language-name>,ar:العربية,en:English,*:Other...')
