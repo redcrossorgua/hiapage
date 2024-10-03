@@ -19,7 +19,7 @@ env:
   NG_USE_FEEDBACK_PROMPT: 'false'
   #
   # Use the language-switcher to switch between Regions (set to 'true' / 'false')
-  NG_USE_REGION_PER_LOCALE: 'false'
+  NG_USE_REGION_PER_LOCALE: 'true'
   #
   # Default language
   NG_LOCALE_LANGUAGE: 'ua'
@@ -27,7 +27,7 @@ env:
   NG_LOCALE_DIR: 'ltr'
   # Available language options (Comma-separated list like: '<language-code>:<language-name>,ar:العربية,en:English,*:Other...')
   # To disable the language-switcher on the main-page, or when using `NG_USE_REGION_PER_LOCALE=true`, set this to: ''
-  NG_LOCALE_ALTERNATIVES: ''
+  NG_LOCALE_ALTERNATIVES: 'ua:Українська,en:English'
   # An (optional) explanation below the list of available language options (i.e "* Using Google Translate")
   NG_LOCALE_ALTERNATIVES_EXPLANATION: ''
   #
